@@ -1,3 +1,24 @@
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { getDatabase, ref as dbRef, push, onChildAdded } from "firebase/database";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDxhPPrjkPo1VOTSPruIgjv_j37Xpx0OHE",
+  authDomain: "gallery-a5670.firebaseapp.com",
+  projectId: "gallery-a5670",
+  storageBucket: "gallery-a5670.appspot.com",
+  messagingSenderId: "471229939031",
+  appId: "1:471229939031:web:3e0a28df2ccb7dac3b9212",
+  databaseURL: "https://gallery-a5670-default-rtdb.firebaseio.com/"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+const database = getDatabase(app);
+
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
     event.preventDefault();
     console.log('Form submitted');
